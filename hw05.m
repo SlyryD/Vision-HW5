@@ -3,7 +3,7 @@
 numImages = 100;
 imgs = cell(1, numImages);
 sigma = 6.5;
-T = 1e-5;
+T = 1e-6;
 
 for i = 1:numImages
     imgs{i} = rgb2gray(imread(sprintf('imgs/b%.5d.bmp', i - 1)));
@@ -32,7 +32,7 @@ for p_x = 1:s_x
     end
 end
 
-imshow(result);
+imwrite(imresize(result, [750, 1000], 'box'), 'result.jpg', 'jpg')
 
     
     
